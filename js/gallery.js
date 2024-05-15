@@ -61,7 +61,7 @@ function storeNotes() {
     const notesField = document.getElementById('notes');
     notesField.addEventListener('blur', function() {
         const notes = this.textContent.trim();
-        const imageKey = getImageKey();
+        const imageKey = getImageKey(document.querySelector('#fullImage img').getAttribute('src'));
         // When the notes field loses focus, store the notes for the current image in the local storage.
         if (notes !== '') {
             localStorage.setItem(imageKey, notes);
